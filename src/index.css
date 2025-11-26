@@ -4,20 +4,20 @@
 
 /* Hide Scrollbar */
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 * {
-    scrollbar-width: none;
+  scrollbar-width: none;
 }
 html.lenis {
-    height: auto;
+  height: auto;
 }
 
 .lenis.lenis-smooth {
-    scroll-behavior: auto !important;
+  scroll-behavior: auto !important;
 }
 
 .lenis.lenis-stopped {
-    overflow: hidden;
+  overflow: hidden;
 }

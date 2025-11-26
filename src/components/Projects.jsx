@@ -6,8 +6,13 @@ import sayip from "../assets/sayip.jpg";
 import stepup from "../assets/stepup.jpg";
 import watch from "../assets/watch.jpg";
 import whether from "../assets/whether.jpg";
+import { useRef } from "react";
+import ai from "../assets/Ai_Companion.jpg";
+import sur from "../assets/al-ser.jpeg";
+import VariableProximity from "./VariableProximity";
 
 function Projects() {
+  const containerRef = useRef(null);
   const projects = [
     {
       name: "EduSphere– E-Learning Platform",
@@ -60,23 +65,34 @@ function Projects() {
     {
       name: "AI Enhanced Surveillance System",
       desc: "YOLO + Blockchain Clips + Flask Dashboard",
-      img: "",
-      link: "https://your-project-link.com",
+      img: sur,
+      link: "/aes.pdf", // Will download from public folder
     },
+
     {
       name: "Companion App",
       desc: "WebSocket-based chat with live status",
-      img: "",
-      link: "https://your-project-link.com",
+      img: ai,
+      link: "smc.pdf",
     },
   ];
 
   return (
-    <section id="projects" className="max-w-6xl mx-auto px-5 py-20">
-      <h2 className="text-3xl font-bold text-center text-zinc-900 mb-10">
-        Projects
-      </h2>
-
+    <section id="projects" className="max-w-6xl mx-auto px-5 py-20 text-center">
+      <div ref={containerRef} style={{ position: "relative" }}>
+        <VariableProximity
+          label={"Projects"}
+          className={
+            "variable-proximity-demo text-6xl font-bold text-zinc-900 text-center"
+          }
+          fromFontVariationSettings="'wght' 400, 'opsz' 9"
+          toFontVariationSettings="'wght' 1000, 'opsz' 40"
+          containerRef={containerRef}
+          radius={100}
+          falloff="linear"
+        />
+      </div>
+      <br />
       {/* Masonry Layout */}
       <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 space-y-5">
         {projects.map((p, index) => (

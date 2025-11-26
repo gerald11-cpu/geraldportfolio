@@ -1,14 +1,31 @@
 import TiltedCard from "./TiltedCard";
 import gs from "../assets/gs.JPG";
+import { useRef } from "react";
+import VariableProximity from "./VariableProximity";
 function About() {
+  const containerRef = useRef(null);
   return (
     <section id="about" className="max-w-5xl mx-auto px-6 py-24 text-gray-300">
       <div className="flex flex-col md:flex-row justify-between items-center gap-8">
         {/* Text Column */}
         <div className="flex flex-col" style={{ marginLeft: "-150px" }}>
-          <h2 className="text-4xl text-center md:text-left font-bold mb-6 text-zinc-200">
+          <div ref={containerRef} style={{ position: "relative" }}>
+            <VariableProximity
+              label={"About Me"}
+              className={
+                "variable-proximity-demo text-6xl font-bold text-zinc-200"
+              }
+              fromFontVariationSettings="'wght' 400, 'opsz' 9"
+              toFontVariationSettings="'wght' 1000, 'opsz' 40"
+              containerRef={containerRef}
+              radius={100}
+              falloff="linear"
+            />
+          </div>
+          <br />
+          {/* <h2 className="text-4xl text-center md:text-left font-bold mb-6 text-zinc-200">
             About Me
-          </h2>
+          </h2> */}
 
           <p className="leading-relaxed text-lg bg-zinc-950/40 p-6 rounded-2xl shadow-lg backdrop-blur">
             I'm a passionate MERN Stack Developer with hands-on experience in

@@ -1,10 +1,30 @@
 import { FaEnvelope, FaGithub, FaLinkedin, FaPhone } from "react-icons/fa";
+import { useRef } from "react";
+import VariableProximity from "./VariableProximity";
 
 function Contact() {
+  const containerRef = useRef(null);
   return (
     <section id="contact" className="w-full px-5 py-20 bg-zinc-300">
       <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-zinc-900 mb-12">Contact</h2>
+        <div
+          ref={containerRef}
+          style={{ position: "relative" }}
+          className="text-center"
+        >
+          <VariableProximity
+            label={"Contact"}
+            className={
+              "variable-proximity-demo text-6xl font-bold text-zinc-900"
+            }
+            fromFontVariationSettings="'wght' 400, 'opsz' 9"
+            toFontVariationSettings="'wght' 1000, 'opsz' 40"
+            containerRef={containerRef}
+            radius={100}
+            falloff="linear"
+          />
+        </div>
+        <br />
 
         <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
           {/* Email */}
