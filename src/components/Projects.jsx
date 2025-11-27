@@ -7,7 +7,7 @@ import stepup from "../assets/stepup.jpg";
 import watch from "../assets/watch.jpg";
 import whether from "../assets/whether.jpg";
 import { useRef } from "react";
-import ai from "../assets/Ai_Companion.jpg";
+import ai from "../assets/aii.jpg";
 import sur from "../assets/al-ser.jpeg";
 import VariableProximity from "./VariableProximity";
 
